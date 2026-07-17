@@ -1,0 +1,220 @@
+{
+  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json",
+  "agents": {
+    "sisyphus": {
+      "model": "saigw-compatible/glm-5.2",
+      "fallback_models": [
+        "saigw-compatible/qwen3.7-max",
+        "saigw-compatible/kimi-k2.7-code"
+      ],
+      "description": "The default orchestrator."
+    },
+    "hephaestus": {
+      "model": "saigw-openai/gpt-5.6-sol",
+      "description": "The Legitimate Craftsman.",
+      "prompt_append": "Please use Question Tools to ask questions.",
+      "variant": "xhigh"
+    },
+    "sisyphus-junior": {
+      "model": "saigw-compatible/glm-5.2",
+      "fallback_models": [
+        "saigw-compatible/kimi-k2.7-code",
+        "saigw-compatible/qwen3.7-max"
+      ],
+      "description": "Sisyphus junior."
+    },
+    "atlas": {
+      "disable": true,
+      "model": "saigw-compatible/glm-5.2",
+      "fallback_models": [
+        "saigw-compatible/kimi-k2.7-code",
+        "saigw-compatible/qwen3.7-max"
+      ],
+      "description": "Todo-list orchestrator."
+    },
+    "prometheus": {
+      "disable": true,
+      "model": "saigw-compatible/glm-5.2",
+      "fallback_models": [
+        "saigw-compatible/kimi-k2.7-code",
+        "saigw-compatible/qwen3.7-max"
+      ],
+      "description": "Strategic planner with interview mode."
+    },
+    "oracle": {
+      "model": "saigw-compatible/glm-5.2",
+      "fallback_models": [
+        "saigw-compatible/kimi-k2.7-code",
+        "saigw-compatible/qwen3.7-max"
+      ],
+      "description": "Architecture decisions, code review, debugging."
+    },
+    "metis": {
+      "model": "saigw-compatible/deepseek-v4-flash",
+      "fallback_models": [
+        "saigw-compatible/minimax-m3",
+        "saigw-openai/gpt-5.4-mini"
+      ],
+      "description": "Plan consultant — pre-planning analysis."
+    },
+    "momus": {
+      "model": "saigw-compatible/deepseek-v4-flash",
+      "fallback_models": [
+        "saigw-compatible/minimax-m3",
+        "saigw-openai/gpt-5.4-mini"
+      ],
+      "description": "Plan reviewer — validates plans."
+    },
+    "librarian": {
+      "model": "saigw-compatible/deepseek-v4-flash",
+      "fallback_models": [
+        "saigw-compatible/minimax-m3",
+        "saigw-openai/gpt-5.4-mini"
+      ],
+      "description": "Documentation and OSS code search. Stays current on library APIs and best practices."
+    },
+    "explore": {
+      "model": "saigw-compatible/deepseek-v4-flash",
+      "fallback_models": [
+        "saigw-compatible/minimax-m3",
+        "saigw-openai/gpt-5.4-mini"
+      ],
+      "description": "Fast codebase grep."
+    },
+    "multimodal-looker": {
+      "model": "saigw-compatible/kimi-k2.7-code",
+      "fallback_models": ["saigw-compatible/minimax-m3"],
+      "description": "Vision and screenshot analysis."
+    }
+  },
+  "categories": {
+    "ultrabrain": {
+      "model": "saigw-compatible/glm-5.2",
+      "fallback_models": [
+        "saigw-compatible/kimi-k2.7-code",
+        "saigw-compatible/qwen3.7-max"
+      ]
+    },
+    "deep": {
+      "model": "saigw-compatible/glm-5.2",
+      "fallback_models": [
+        "saigw-compatible/kimi-k2.7-code",
+        "saigw-compatible/qwen3.7-max"
+      ]
+    },
+    "artistry": {
+      "model": "saigw-compatible/glm-5.2",
+      "fallback_models": [
+        "saigw-compatible/kimi-k2.7-code",
+        "saigw-compatible/qwen3.7-max"
+      ]
+    },
+    "writing": {
+      "model": "saigw-compatible/qwen3.7-max",
+      "fallback_models": [
+        "saigw-compatible/glm-5.2",
+        "saigw-compatible/kimi-k2.7-code"
+      ]
+    },
+    "visual-engineering": {
+      "model": "saigw-compatible/glm-5.2",
+      "fallback_models": [
+        "saigw-compatible/kimi-k2.7-code",
+        "saigw-compatible/qwen3.7-max"
+      ]
+    },
+    "quick": {
+      "model": "saigw-compatible/deepseek-v4-flash",
+      "fallback_models": ["saigw-openai/gpt-5.4-mini"]
+    },
+    "unspecified-low": {
+      "model": "saigw-compatible/deepseek-v4-flash",
+      "fallback_models": ["saigw-openai/gpt-5.4-mini"]
+    },
+    "unspecified-high": {
+      "model": "saigw-compatible/glm-5.2",
+      "fallback_models": [
+        "saigw-compatible/kimi-k2.7-code",
+        "saigw-compatible/qwen3.7-max"
+      ]
+    },
+    "git": {
+      "model": "saigw-compatible/deepseek-v4-flash",
+      "fallback_models": ["saigw-openai/gpt-5.4-mini"],
+      "description": "All git operations",
+      "prompt_append": "Focus on atomic commits, clear messages, and safe operations."
+    },
+    "gpt": {
+      "model": "saigw-openai/gpt-5.6-sol",
+      "description": "Use gpt model"
+    },
+    "deepseek": {
+      "model": "saigw-compatible/deepseek-v4-pro",
+      "description": "Use deepseek model"
+    },
+    "glm": {
+      "model": "saigw-compatible/glm-5.2",
+      "description": "Use glm model"
+    },
+    "kimi": {
+      "model": "saigw-compatible/kimi-k2.7-code",
+      "description": "Use kimi model"
+    },
+    "minimax": {
+      "model": "saigw-compatible/minimax-m3",
+      "description": "Use minimax model"
+    },
+    "qwen": {
+      "model": "saigw-openai/qwen3.7-max",
+      "description": "Use qwen model"
+    },
+    "mimo": {
+      "model": "saigw-compatible/mimo-v2.5-pro",
+      "description": "Use mimo model"
+    },
+    "free": {
+      "model": "opencode/deepseek-v4-flash-free",
+      "description": "Use mimo model"
+    }
+  },
+  "git_master": {
+    "commit_footer": true,
+    "include_co_authored_by": true,
+    "git_env_prefix": "GIT_MASTER=1"
+  },
+  "sisyphus_agent": {
+    "default_builder_enabled": false
+  },
+  "browser_automation_engine": {
+    "provider": "agent-browser"
+  },
+  "tmux": {
+    "enabled": false,
+    "layout": "main-vertical",
+    "main_pane_size": 60,
+    "main_pane_min_width": 120,
+    "agent_pane_min_width": 40,
+    "isolation": "inline"
+  },
+  "skills": {
+    "sources": [
+      {
+        "path": "/home/sang/.agents/skills",
+        "recursive": false
+      }
+    ]
+  },
+  "team_mode": {
+    "enabled": true,
+    "tmux_visualization": false,
+    "max_parallel_members": 4,
+    "max_members": 8,
+    "max_messages_per_run": 10000,
+    "max_wall_clock_minutes": 120,
+    "max_member_turns": 500,
+    "message_payload_max_bytes": 32768,
+    "recipient_unread_max_bytes": 262144,
+    "mailbox_poll_interval_ms": 3000
+  },
+  "agent_order": ["sisyphus", "hephaestus"]
+}

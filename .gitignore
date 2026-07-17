@@ -1,0 +1,12 @@
+# node
+node_modules
+
+# logs
+*.log
+
+# env
+opencode-webhook-notify.json
+
+# agents
+.sisyphus
+.omx
