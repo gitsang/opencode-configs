@@ -10,3 +10,9 @@ opencode-webhook-notify.json
 # agents
 .sisyphus
 .omx
+
+# secrets / local state
+service.json
+.env
+.env.*
+*.local.json

@@ -1,22 +1,15 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "logLevel": "DEBUG",
-  "plugin": [
-    "opencode-webhook-notify@git+https://github.com/gitsang/opencode-webhook-notify.git",
-    "./plugins/opencode-context-cache.mjs",
-    "oh-my-openagent"
-  ],
-  "default_agent": "sisyphus",
   "formatter": {
     "shfmt": {
       "disabled": true
     }
   },
-  "provider": {
+  "providers": {
     "saigw-anthropic": {
-      "npm": "@ai-sdk/anthropic",
       "name": "Saigw (Anthropic)",
-      "options": {
+      "package": "aisdk:@ai-sdk/anthropic",
+      "settings": {
         "baseURL": "https://aigw.cn.c8g.top/anthropic/v1"
       },
       "models": {
@@ -30,16 +23,18 @@
       }
     },
     "saigw-openai": {
-      "npm": "@ai-sdk/openai",
       "name": "Saigw (OpenAI)",
-      "options": {
-        "baseURL": "https://aigw.cn.c8g.top/v1",
-        "setCacheKey": true
+      "package": "aisdk:@ai-sdk/openai",
+      "settings": {
+        "baseURL": "https://aigw.cn.c8g.top/v1"
+      },
+      "compatibility": {
+        "supportsPromptCacheKey": true
       },
       "models": {
         "gpt-5.4-mini": {
           "name": "GPT 5.4 Mini",
-          "options": {
+          "settings": {
             "store": false,
             "serviceTier": "priority",
             "textVerbosity": "low",
@@ -49,137 +44,216 @@
             "context": 400000,
             "output": 128000
           },
-          "variants": {
-            "low": {
-              "reasoningEffort": "low"
+          "variants": [
+            {
+              "id": "low",
+              "settings": {
+                "reasoningEffort": "low"
+              }
             },
-            "medium": {
-              "reasoningEffort": "medium"
+            {
+              "id": "medium",
+              "settings": {
+                "reasoningEffort": "medium"
+              }
             },
-            "high": {
-              "reasoningEffort": "high"
+            {
+              "id": "high",
+              "settings": {
+                "reasoningEffort": "high"
+              }
             },
-            "xhigh": {
-              "reasoningEffort": "xhigh"
+            {
+              "id": "xhigh",
+              "settings": {
+                "reasoningEffort": "xhigh"
+              }
             }
-          }
+          ]
         },
         "gpt-5.6-sol": {
           "name": "GPT 5.6 Sol",
-          "options": {
+          "settings": {
             "store": false,
             "serviceTier": "priority",
             "textVerbosity": "low",
             "reasoningSummary": "auto"
           },
-          "modalities": {
-            "input": ["text", "image", "pdf"],
-            "output": ["text"]
+          "capabilities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
           },
           "limit": {
             "context": 361472,
             "output": 128000
           },
-          "variants": {
-            "low": {
-              "reasoningEffort": "low"
+          "variants": [
+            {
+              "id": "low",
+              "settings": {
+                "reasoningEffort": "low"
+              }
             },
-            "medium": {
-              "reasoningEffort": "medium"
+            {
+              "id": "medium",
+              "settings": {
+                "reasoningEffort": "medium"
+              }
             },
-            "high": {
-              "reasoningEffort": "high"
+            {
+              "id": "high",
+              "settings": {
+                "reasoningEffort": "high"
+              }
             },
-            "xhigh": {
-              "reasoningEffort": "xhigh"
+            {
+              "id": "xhigh",
+              "settings": {
+                "reasoningEffort": "xhigh"
+              }
             },
-            "max": {
-              "reasoningEffort": "max"
+            {
+              "id": "max",
+              "settings": {
+                "reasoningEffort": "max"
+              }
             }
-          }
+          ]
         },
         "gpt-5.6-terra": {
           "name": "GPT 5.6 Terra",
-          "options": {
+          "settings": {
             "store": false,
             "serviceTier": "priority",
             "textVerbosity": "low",
             "reasoningSummary": "auto"
           },
-          "modalities": {
-            "input": ["text", "image", "pdf"],
-            "output": ["text"]
+          "capabilities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
           },
           "limit": {
             "context": 361472,
             "output": 128000
           },
-          "variants": {
-            "low": {
-              "reasoningEffort": "low"
+          "variants": [
+            {
+              "id": "low",
+              "settings": {
+                "reasoningEffort": "low"
+              }
             },
-            "medium": {
-              "reasoningEffort": "medium"
+            {
+              "id": "medium",
+              "settings": {
+                "reasoningEffort": "medium"
+              }
             },
-            "high": {
-              "reasoningEffort": "high"
+            {
+              "id": "high",
+              "settings": {
+                "reasoningEffort": "high"
+              }
             },
-            "xhigh": {
-              "reasoningEffort": "xhigh"
+            {
+              "id": "xhigh",
+              "settings": {
+                "reasoningEffort": "xhigh"
+              }
             },
-            "max": {
-              "reasoningEffort": "max"
+            {
+              "id": "max",
+              "settings": {
+                "reasoningEffort": "max"
+              }
             }
-          }
+          ]
         },
         "gpt-5.6-luna": {
           "name": "GPT 5.6 Luna",
-          "options": {
+          "settings": {
             "store": false,
             "serviceTier": "priority",
             "textVerbosity": "low",
             "reasoningSummary": "auto"
           },
-          "modalities": {
-            "input": ["text", "image", "pdf"],
-            "output": ["text"]
+          "capabilities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
           },
           "limit": {
             "context": 361472,
             "output": 128000
           },
-          "variants": {
-            "low": {
-              "reasoningEffort": "low"
+          "variants": [
+            {
+              "id": "low",
+              "settings": {
+                "reasoningEffort": "low"
+              }
             },
-            "medium": {
-              "reasoningEffort": "medium"
+            {
+              "id": "medium",
+              "settings": {
+                "reasoningEffort": "medium"
+              }
             },
-            "high": {
-              "reasoningEffort": "high"
+            {
+              "id": "high",
+              "settings": {
+                "reasoningEffort": "high"
+              }
             },
-            "xhigh": {
-              "reasoningEffort": "xhigh"
+            {
+              "id": "xhigh",
+              "settings": {
+                "reasoningEffort": "xhigh"
+              }
             },
-            "max": {
-              "reasoningEffort": "max"
+            {
+              "id": "max",
+              "settings": {
+                "reasoningEffort": "max"
+              }
             }
-          }
+          ]
         }
       }
     },
     "saigw-compatible": {
-      "npm": "@ai-sdk/openai-compatible",
       "name": "Saigw (Compatible)",
-      "options": {
+      "package": "aisdk:@ai-sdk/openai-compatible",
+      "settings": {
         "baseURL": "https://aigw.cn.c8g.top/v1"
       },
       "models": {
         "glm-5.2": {
           "name": "GLM 5.2",
-          "modalities": {
-            "input": ["text"],
-            "output": ["text"]
+          "capabilities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
           },
           "limit": {
             "context": 1000000,
@@ -188,9 +262,15 @@
         },
         "kimi-k3": {
           "name": "Kimi K3",
-          "modalities": {
-            "input": ["text", "image", "video"],
-            "output": ["text"]
+          "capabilities": {
+            "input": [
+              "text",
+              "image",
+              "video"
+            ],
+            "output": [
+              "text"
+            ]
           },
           "limit": {
             "context": 1048576,
@@ -199,9 +279,15 @@
         },
         "kimi-k2.7-code": {
           "name": "Kimi K2.7 Code",
-          "modalities": {
-            "input": ["text", "image", "video"],
-            "output": ["text"]
+          "capabilities": {
+            "input": [
+              "text",
+              "image",
+              "video"
+            ],
+            "output": [
+              "text"
+            ]
           },
           "limit": {
             "context": 262144,
@@ -210,9 +296,13 @@
         },
         "qwen3.7-max": {
           "name": "Qwen3.7 Max",
-          "modalities": {
-            "input": ["text"],
-            "output": ["text"]
+          "capabilities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
           },
           "limit": {
             "context": 1000000,
@@ -225,16 +315,24 @@
             "context": 1048576,
             "output": 131072
           },
-          "modalities": {
-            "input": ["text"],
-            "output": ["text"]
+          "capabilities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
           }
         },
         "deepseek-v4-pro": {
           "name": "Deepseek V4 Pro",
-          "modalities": {
-            "input": ["text"],
-            "output": ["text"]
+          "capabilities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
           },
           "limit": {
             "context": 1000000,
@@ -243,9 +341,13 @@
         },
         "deepseek-v4-flash": {
           "name": "Deepseek V4 Flash",
-          "modalities": {
-            "input": ["text"],
-            "output": ["text"]
+          "capabilities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
           },
           "limit": {
             "context": 1000000,
@@ -254,9 +356,15 @@
         },
         "minimax-m3": {
           "name": "MiniMax M3",
-          "modalities": {
-            "input": ["text", "image", "video"],
-            "output": ["text"]
+          "capabilities": {
+            "input": [
+              "text",
+              "image",
+              "video"
+            ],
+            "output": [
+              "text"
+            ]
           },
           "limit": {
             "context": 512000,
@@ -265,9 +373,14 @@
         },
         "grok-4.5": {
           "name": "Grok 4.5",
-          "modalities": {
-            "input": ["text", "image"],
-            "output": ["text"]
+          "capabilities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
           },
           "limit": {
             "context": 500000,
@@ -276,9 +389,14 @@
         },
         "ratatosk": {
           "name": "Ratatosk",
-          "modalities": {
-            "input": ["text", "image"],
-            "output": ["text"]
+          "capabilities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
           },
           "limit": {
             "context": 131072,
@@ -286,6 +404,37 @@
           }
         }
       }
+    },
+    "go": {
+      "name": "Go",
+      "package": "aisdk:@ai-sdk/openai-compatible",
+      "settings": {
+        "baseURL": "https://opencode.ai/zen/go/v1",
+        "apiKey": "{env:OPENCODE_GO_API_KEY}"
+      },
+      "models": {
+        "kimi-k3": {
+          "name": "Kimi K3",
+          "capabilities": {
+            "input": [
+              "text",
+              "image",
+              "video"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 1048576,
+            "output": 131072
+          }
+        }
+      },
+      "env": [
+        "OPENCODE_GO_API_KEY"
+      ]
     }
-  }
+  },
+  "default_agent": "build"
 }
