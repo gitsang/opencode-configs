@@ -8,7 +8,7 @@
   "default_agent": "build",
   "providers": {
     "saigw-anthropic": {
-      "name": "Saigw (Anthropic)",
+      "name": "S.AI (Anthropic)",
       "package": "aisdk:@ai-sdk/anthropic",
       "settings": {
         "baseURL": "https://aigw.cn.c8g.top/anthropic/v1"
@@ -24,7 +24,7 @@
       }
     },
     "saigw-openai": {
-      "name": "Saigw (OpenAI)",
+      "name": "S.AI (OpenAI)",
       "package": "aisdk:@ai-sdk/openai",
       "settings": {
         "baseURL": "https://aigw.cn.c8g.top/v1"
@@ -96,4 +96,3 @@
     }
   }
 }
-
